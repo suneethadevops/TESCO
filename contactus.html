@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - TESCO</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        nav {
+            background-color: #005ea5;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background-color: #005ea5;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .contact-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .contact-form h2 {
+            color: #005ea5;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        button {
+            background-color: #005ea5;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #004080;
+        }
+        .contact-info {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin: 40px 0;
+            text-align: center;
+        }
+        .contact-info h3 {
+            color: #005ea5;
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/Tesco-Logo.png" alt="TESCO Logo" style="height: 40px; vertical-align: middle; margin-right: 20px;">
+        <a href="home.html">Home</a>
+        <a href="contactus.html">Contact Us</a>
+    </nav>
+    <div class="hero">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you. Get in touch with us today!</p>
+    </div>
+    <div class="container">
+        <div class="contact-form">
+            <h2>Send us a Message</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p><strong>Email:</strong> support@tesco.com</p>
+            <p><strong>Phone:</strong> +44 (0) 800 505 5555</p>
+            <p><strong>Address:</strong> Welwyn Garden City, Hertfordshire, UK</p>
+        </div>
+    </div>
+    <footer>
+        &copy; 2026 TESCO. All rights reserved.
+    </footer>
+</body>
+</html>

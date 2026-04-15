@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - TESCO</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        nav {
+            background-color: #005ea5;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background-color: #005ea5;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .cart-table {
+            width: 100%;
+            background-color: white;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        .cart-table th {
+            background-color: #005ea5;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+        .cart-table td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-table tr:last-child td {
+            border-bottom: none;
+        }
+        .product-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .cart-summary {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin-left: auto;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .summary-row strong {
+            color: #005ea5;
+        }
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: bold;
+            color: #005ea5;
+            border-top: 2px solid #ddd;
+            padding-top: 15px;
+        }
+        .checkout-btn {
+            background-color: #005ea5;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .checkout-btn:hover {
+            background-color: #004080;
+        }
+        .empty-cart {
+            text-align: center;
+            padding: 40px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/Tesco-Logo.png" alt="TESCO Logo" style="height: 40px; vertical-align: middle; margin-right: 20px;">
+        <a href="home.html">Home</a>
+        <a href="cart.html">Cart</a>
+        <a href="contactus.html">Contact Us</a>
+    </nav>
+    <div class="hero">
+        <h1>Shopping Cart</h1>
+        <p>Review and manage your shopping items</p>
+    </div>
+    <div class="container">
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fresh Vegetables</td>
+                    <td>£5.99</td>
+                    <td>2</td>
+                    <td>£11.98</td>
+                </tr>
+                <tr>
+                    <td>Milk (1L)</td>
+                    <td>£1.50</td>
+                    <td>3</td>
+                    <td>£4.50</td>
+                </tr>
+                <tr>
+                    <td>Premium Meat</td>
+                    <td>£12.99</td>
+                    <td>1</td>
+                    <td>£12.99</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <strong>£29.47</strong>
+            </div>
+            <div class="summary-row">
+                <span>Shipping:</span>
+                <strong>£3.00</strong>
+            </div>
+            <div class="summary-row">
+                <span>Tax:</span>
+                <strong>£6.47</strong>
+            </div>
+            <div class="total-row">
+                <span>Total:</span>
+                <span>£38.94</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <footer>
+        &copy; 2026 TESCO. All rights reserved.
+    </footer>
+</body>
+</html>
