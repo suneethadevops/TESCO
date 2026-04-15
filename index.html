@@ -1,25 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to TESCO</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        nav { background-color: #333; overflow: hidden; }
-        nav a { float: left; display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none; }
-        nav a:hover { background-color: #ddd; color: black; }
-        .container { padding: 20px; text-align: center; }
-        h1 { color: #333; font-size: 2.5em; margin-bottom: 20px; }
-        p { font-size: 1.2em; color: #666; }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        nav {
+            background-color: #005ea5; /* TESCO blue */
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background-color: #005ea5;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+        }
+        .feature {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 30%;
+        }
+        .feature h3 {
+            color: #005ea5;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
     <nav>
         <a href="home.html">Home</a>
-        <a href="about.html">About</a>
     </nav>
-    <div class="container">
+    <div class="hero">
         <h1>Welcome to TESCO</h1>
-        <p>Your one-stop shop for all things great.</p>
+        <p>Your one-stop shop for quality groceries and more.</p>
     </div>
+    <div class="container">
+        <div class="features">
+            <div class="feature">
+                <h3>Fresh Produce</h3>
+                <p>Enjoy the freshest fruits and vegetables delivered to your door.</p>
+            </div>
+            <div class="feature">
+                <h3>Online Shopping</h3>
+                <p>Shop online with ease and convenience from anywhere.</p>
+            </div>
+            <div class="feature">
+                <h3>Great Prices</h3>
+                <p>Find unbeatable deals and discounts on all your favorites.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; 2026 TESCO. All rights reserved.
+    </footer>
 </body>
 </html>
