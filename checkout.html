@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - TESCO</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        nav {
+            background-color: #005ea5;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background-color: #005ea5;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .checkout-wrapper {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .checkout-form {
+            flex: 2;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .checkout-form h2 {
+            color: #005ea5;
+            border-bottom: 2px solid #005ea5;
+            padding-bottom: 10px;
+        }
+        .form-section {
+            margin-bottom: 30px;
+        }
+        .form-section h3 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        .form-group {
+            flex: 1;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #005ea5;
+            box-shadow: 0 0 5px rgba(0, 94, 165, 0.3);
+        }
+        .order-summary {
+            flex: 1;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+        .order-summary h3 {
+            color: #005ea5;
+            border-bottom: 2px solid #005ea5;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .order-item:last-child {
+            border-bottom: none;
+        }
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            font-weight: bold;
+            color: #005ea5;
+            padding-top: 15px;
+            border-top: 2px solid #005ea5;
+            margin-top: 15px;
+        }
+        .place-order-btn {
+            background-color: #005ea5;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .place-order-btn:hover {
+            background-color: #004080;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/Tesco-Logo.png" alt="TESCO Logo" style="height: 40px; vertical-align: middle; margin-right: 20px;">
+        <a href="home.html">Home</a>
+        <a href="cart.html">Cart</a>
+        <a href="contactus.html">Contact Us</a>
+    </nav>
+    <div class="hero">
+        <h1>Checkout</h1>
+        <p>Complete your purchase securely</p>
+    </div>
+    <div class="container">
+        <div class="checkout-wrapper">
+            <div class="checkout-form">
+                <h2>Checkout Details</h2>
+                
+                <div class="form-section">
+                    <h3>Shipping Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fname">First Name:</label>
+                            <input type="text" id="fname" name="fname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lname">Last Name:</label>
+                            <input type="text" id="lname" name="lname" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City:</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="postcode">Postcode:</label>
+                            <input type="text" id="postcode" name="postcode" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Payment Information</h3>
+                    <div class="form-group">
+                        <label for="cardname">Cardholder Name:</label>
+                        <input type="text" id="cardname" name="cardname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardnumber">Card Number:</label>
+                        <input type="text" id="cardnumber" name="cardnumber" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">Expiry Date:</label>
+                            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV:</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <div class="order-item">
+                    <span>Fresh Vegetables (2x)</span>
+                    <span>£11.98</span>
+                </div>
+                <div class="order-item">
+                    <span>Milk 1L (3x)</span>
+                    <span>£4.50</span>
+                </div>
+                <div class="order-item">
+                    <span>Premium Meat (1x)</span>
+                    <span>£12.99</span>
+                </div>
+                <div class="order-item">
+                    <span>Subtotal</span>
+                    <span>£29.47</span>
+                </div>
+                <div class="order-item">
+                    <span>Shipping</span>
+                    <span>£3.00</span>
+                </div>
+                <div class="order-item">
+                    <span>Tax</span>
+                    <span>£6.47</span>
+                </div>
+                <div class="summary-total">
+                    <span>Total:</span>
+                    <span>£38.94</span>
+                </div>
+                <button class="place-order-btn">Place Order</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; 2026 TESCO. All rights reserved.
+    </footer>
+</body>
+</html>
