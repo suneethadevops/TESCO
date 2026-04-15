@@ -60,6 +60,59 @@
         .content p {
             line-height: 1.6;
         }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 15px;
+        }
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .product-category {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .product-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #005ea5;
+            margin-bottom: 15px;
+        }
+        .add-to-cart-btn {
+            background-color: #005ea5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        .add-to-cart-btn:hover {
+            background-color: #004080;
+        }
         footer {
             background-color: #333;
             color: white;
@@ -83,9 +136,82 @@
             <p>TESCO is a leading multinational groceries and general merchandise retailer headquartered in Welwyn Garden City, England. We offer a wide variety of products including food, clothing, electronics, and more. Our mission is to make shopping easier, faster, and more affordable for our customers.</p>
             <p>Visit our stores or shop online to enjoy the best deals and quality products. Join our Clubcard program for exclusive offers and rewards.</p>
         </div>
+        <h2>Our Products</h2>
+        <div class="products">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Fresh Vegetables" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Fresh Vegetables</div>
+                    <div class="product-category">Vegetables</div>
+                    <div class="product-price">£5.99</div>
+                    <button class="add-to-cart-btn" onclick="addToCart(1)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Milk (1L)" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Milk (1L)</div>
+                    <div class="product-category">Dairy</div>
+                    <div class="product-price">£1.50</div>
+                    <button class="add-to-cart-btn" onclick="addToCart(2)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Premium Meat" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Premium Meat</div>
+                    <div class="product-category">Meat</div>
+                    <div class="product-price">£12.99</div>
+                    <button class="add-to-cart-btn" onclick="addToCart(3)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1560806887-1195c9fb2756?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Organic Apples" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Organic Apples</div>
+                    <div class="product-category">Fruits</div>
+                    <div class="product-price">£3.99</div>
+                    <button class="add-to-cart-btn" onclick="addToCart(4)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Whole Wheat Bread" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Whole Wheat Bread</div>
+                    <div class="product-category">Bakery</div>
+                    <div class="product-price">£2.49</div>
+                    <button class="add-to-cart-btn" onclick="addToCart(5)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1563869733338-46c48c69cb9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Yogurt (500g)" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">Yogurt (500g)</div>
+                    <div class="product-category">Dairy</div>
+                    <div class="product-price">£1.99</div>
+                    <button class="add-to-cart-btn" onclick="addToCart(6)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
     </div>
     <footer>
         &copy; 2026 TESCO. All rights reserved.
     </footer>
+    <script src="product.js"></script>
+    <script src="cart.js"></script>
+    <script>
+        // Initialize cart
+        let shoppingCart = new ShoppingCart();
+
+        // Function to add to cart
+        function addToCart(productId) {
+            const product = inventory.getProductById(productId);
+            if (product) {
+                shoppingCart.addItem(product);
+                shoppingCart.saveCart();
+                alert(`${product.name} added to cart!`);
+            }
+        }
+    </script>
 </body>
 </html>

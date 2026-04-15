@@ -148,43 +148,26 @@
                     <th>Total</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>Fresh Vegetables</td>
-                    <td>£5.99</td>
-                    <td>2</td>
-                    <td>£11.98</td>
-                </tr>
-                <tr>
-                    <td>Milk (1L)</td>
-                    <td>£1.50</td>
-                    <td>3</td>
-                    <td>£4.50</td>
-                </tr>
-                <tr>
-                    <td>Premium Meat</td>
-                    <td>£12.99</td>
-                    <td>1</td>
-                    <td>£12.99</td>
-                </tr>
+            <tbody id="cart-table-body">
+                <!-- Cart items will be populated by JavaScript -->
             </tbody>
         </table>
         <div class="cart-summary">
             <div class="summary-row">
                 <span>Subtotal:</span>
-                <strong>£29.47</strong>
+                <strong id="subtotal">£29.47</strong>
             </div>
             <div class="summary-row">
                 <span>Shipping:</span>
-                <strong>£3.00</strong>
+                <strong id="shipping">£3.00</strong>
             </div>
             <div class="summary-row">
                 <span>Tax:</span>
-                <strong>£6.47</strong>
+                <strong id="tax">£6.47</strong>
             </div>
             <div class="total-row">
                 <span>Total:</span>
-                <span>£38.94</span>
+                <span id="total">£38.94</span>
             </div>
             <button class="checkout-btn">Proceed to Checkout</button>
         </div>
@@ -192,5 +175,80 @@
     <footer>
         &copy; 2026 TESCO. All rights reserved.
     </footer>
+    <script src="product.js"></script>
+    <script src="cart.js"></script>
+    <script>
+        // Initialize cart
+        let shoppingCart = new ShoppingCart();
+
+        // Load cart from localStorage or add sample items
+        function initializeCart() {
+            const savedCart = shoppingCart.loadCart();
+            if (savedCart && savedCart.items.length > 0) {
+                // Load saved items
+                savedCart.items.forEach(item => {
+                    const product = inventory.getProductById(item.productId);
+                    if (product) {
+                        shoppingCart.addItem(product, item.quantity);
+                    }
+                });
+            } else {
+                // Add sample items for demo
+                const veg = inventory.getProductById(1);
+                const milk = inventory.getProductById(2);
+                const meat = inventory.getProductById(3);
+                if (veg) shoppingCart.addItem(veg, 2);
+                if (milk) shoppingCart.addItem(milk, 3);
+                if (meat) shoppingCart.addItem(meat, 1);
+            }
+            displayCart();
+        }
+
+        // Display cart items
+        function displayCart() {
+            const tbody = document.getElementById('cart-table-body');
+            tbody.innerHTML = '';
+
+            shoppingCart.getItems().forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.product.name}</td>
+                    <td>£${item.product.price.toFixed(2)}</td>
+                    <td>
+                        <button onclick="updateQuantity('${item.product.id}', ${item.quantity - 1})">-</button>
+                        <span>${item.quantity}</span>
+                        <button onclick="updateQuantity('${item.product.id}', ${item.quantity + 1})">+</button>
+                    </td>
+                    <td>£${item.getTotalPrice()}</td>
+                `;
+                tbody.appendChild(row);
+            });
+
+            updateSummary();
+        }
+
+        // Update item quantity
+        function updateQuantity(productId, newQuantity) {
+            if (newQuantity <= 0) {
+                shoppingCart.removeItem(productId);
+            } else {
+                shoppingCart.updateItemQuantity(productId, newQuantity);
+            }
+            shoppingCart.saveCart();
+            displayCart();
+        }
+
+        // Update cart summary
+        function updateSummary() {
+            const summary = shoppingCart.getSummary();
+            document.getElementById('subtotal').textContent = `£${summary.subtotal}`;
+            document.getElementById('shipping').textContent = `£${summary.shipCost}`;
+            document.getElementById('tax').textContent = `£${summary.tax}`;
+            document.getElementById('total').textContent = `£${summary.total}`;
+        }
+
+        // Initialize on page load
+        window.onload = initializeCart;
+    </script>
 </body>
 </html>
