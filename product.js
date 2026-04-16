@@ -104,7 +104,10 @@ const sampleProducts = [
     new Product(3, "Premium Meat", 12.99, "Meat", "High-quality beef cuts", "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"),
     new Product(4, "Organic Apples", 3.99, "Fruits", "Fresh organic apples", "https://images.unsplash.com/photo-1560806887-1195c9fb2756?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"),
     new Product(5, "Whole Wheat Bread", 2.49, "Bakery", "Fresh whole wheat bread", "https://images.unsplash.com/photo-1555507036-ab1f4038808a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"),
-    new Product(6, "Yogurt (500g)", 1.99, "Dairy", "Creamy natural yogurt", "https://images.unsplash.com/photo-1563869733338-46c48c69cb9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80")
+    new Product(6, "Yogurt (500g)", 1.99, "Dairy", "Creamy natural yogurt", "https://images.unsplash.com/photo-1563869733338-46c48c69cb9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"),
+    new Product(7, "Dish Soap", 2.49, "Cleaning", "Effective dishwashing liquid", "https://images.unsplash.com/photo-1583947215259-38e31be8751f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"),
+    new Product(8, "All-Purpose Cleaner", 3.99, "Cleaning", "Multi-surface cleaning spray", "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"),
+    new Product(9, "Laundry Detergent", 4.99, "Cleaning", "Powerful laundry detergent", "https://images.unsplash.com/photo-1626808642875-0aa545482dfb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80")
 ];
 
 // Initialize inventory
